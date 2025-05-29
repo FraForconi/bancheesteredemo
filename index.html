@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Personalization Page</title>
+
+  <!-- 🌐 Beacon di Salesforce MC Personalization -->
+  <script type="text/javascript">
+    (function() {
+      var s = document.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = '//cdn.evgnet.com/beacon/partneraccentureitaly/bancheesteredemo/scripts/evergage.min.js';
+      var x = document.getElementsByTagName('script')[0];
+      x.parentNode.insertBefore(s, x);
+    })();
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #00539F;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    .content-zone-1 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .content-zone-2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .content-zone-2 img {
+      width: 300px;
+      height: auto;
+    }
+
+    .content-zone-2 .text {
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      margin-top: 40px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 250px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      scroll-snap-align: center;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Benvenuto nella nostra pagina di test</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Chi siamo</a>
+    <a href="#">Contatti</a>
+  </nav>
+
+  <!-- 📷 Content Zone 1: Immagine principale -->
+  <section class="content-zone-1">
+    <img src="https://via.placeholder.com/1200x400?text=Hero+Image+Personalization+Test" alt="Hero Image">
+  </section>
+
+  <!-- 🖼️ Content Zone 2: Immagine a sinistra, testo a destra -->
+  <section class="content-zone-2">
+    <img src="https://via.placeholder.com/300x300?text=Immagine+SX" alt="Immagine Sinistra">
+    <div class="text">
+      <h2>Area informativa</h2>
+      <p>
+        Questo è un testo di esempio accanto all'immagine. Qui potresti inserire contenuti personalizzati con Salesforce MC Personalization.
+      </p>
+    </div>
+  </section>
+
+  <!-- 🎠 Content Zone 3: Carosello -->
+  <section class="carousel">
+    <div class="carousel-item">Elemento 1</div>
+    <div class="carousel-item">Elemento 2</div>
+    <div class="carousel-item">Elemento 3</div>
+    <div class="carousel-item">Elemento 4</div>
+  </section>
+
+  <footer>
+    &copy; 2025 Pagina di Test Personalization
+  </footer>
+
+</body>
+</html>
