@@ -1,21 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Test Personalization Page</title>
-
-  <!-- 🌐 Beacon di Salesforce MC Personalization -->
-  <script type="text/javascript">
-    (function() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = '//cdn.evgnet.com/beacon/partneraccentureitaly/bancheesteredemo/scripts/evergage.min.js';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    })();
-  </script>
 
   <style>
     body {
@@ -41,6 +29,12 @@
       color: white;
       margin: 0 15px;
       text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid white;
+      padding-bottom: 4px;
     }
 
     section {
@@ -53,13 +47,16 @@
       height: auto;
     }
 
-    .content-zone-2,
-    .content-zone-3 {
+    .content-zone-1 [data-pzn-zone="main-hero"] {
+      display: block;
+    }
+
+    .content-zone-2, .content-zone-3 {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 40px;
-      margin-top: 60px;
+      gap: 30px;
+      margin-top: 40px;
       flex-wrap: wrap;
     }
 
@@ -67,18 +64,15 @@
     .content-zone-3 img {
       width: 400px;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .content-zone-2 .text,
-    .content-zone-3 .text {
-      max-width: 500px;
-      font-size: 1.1rem;
-      line-height: 1.6;
+    .content-zone-2 .text {
+      max-width: 400px;
+      text-align: left;
     }
 
     .content-zone-3 .text {
+      max-width: 400px;
       text-align: right;
     }
 
@@ -107,28 +101,48 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    .footer-links {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #cccccc;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Benvenuto nella nostra pagina di test</h1>
+    <h1>Welcome to our test page</h1>
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="#">Contact</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="cards.html">Cards</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="#">Investments</a>
   </nav>
 
-  <!-- 📷 Content Zone 1: Immagine principale -->
-  <section class="content-zone-1">
-    <img src="https://cd9941cc.delivery.rocketcdn.me/wp-content/uploads/2024/08/ICICI-Bank-Add-on-Credit-Cards.webp" alt="Hero Image">
+  <!-- Hero image with selector -->
+  <section class="content-zone-1" id="heroImageZone">
+    <div data-pzn-zone="main-hero">
+      <img src="https://cd9941cc.delivery.rocketcdn.me/wp-content/uploads/2024/08/ICICI-Bank-Add-on-Credit-Cards.webp" alt="Hero Image" />
+    </div>
   </section>
 
-  <!-- 🖼️ Content Zone 2: Immagine a sinistra, testo a destra -->
-  <section class="content-zone-2">
-    <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/CB/UB/LD/30911963/card.jpg" alt="Immagine Sinistra">
+  <!-- Content section 2 -->
+  <section class="content-zone-2" id="Block2Zone">
+    <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/CB/UB/LD/30911963/card.jpg" alt="Left Image">
     <div class="text">
       <h2>Classic Card</h2>
       <p>
@@ -137,19 +151,25 @@
     </div>
   </section>
 
-  <!-- 📄 Content Zone 3: Testo a sinistra, immagine a destra -->
-  <section class="content-zone-3">
+  <!-- Content section 3 -->
+  <section class="content-zone-3" id="Block3Zone">
     <div class="text">
       <h2>Basic Bank Account</h2>
       <p>
         The account that meets the basic needs of those who don’t have other accounts. The costs of direct debits for utility bill payments are included in the fee.
       </p>
     </div>
-    <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Conti/Conto%20di%20base/schedina-v2-conto-di-base.jpg" alt="Immagine Destra">
+    <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Conti/Conto%20di%20base/schedina-v2-conto-di-base.jpg" alt="Right Image">
   </section>
 
   <footer>
-    &copy; 2025 Pagina di Test Personalization
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Test Personalization Page
+    </div>
   </footer>
 
 </body>
