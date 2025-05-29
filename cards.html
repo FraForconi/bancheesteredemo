@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Cards</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #00539F;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-snap-type: x mandatory;
+      justify-content: center;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 300px;
+      background-color: #f9f9f9;
+      padding: 20px;
+      scroll-snap-align: center;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .carousel-item h3 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .footer-links {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    .copyright {
+      font-size: 12px;
+      color: #cccccc;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Discover Our Cards</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="cards.html" class="active">Cards</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="#">Investments</a>
+  </nav>
+
+  <div class="hero">
+    <img src="https://cd9941cc.delivery.rocketcdn.me/wp-content/uploads/2024/08/ICICI-Bank-Add-on-Credit-Cards.webp" alt="Cards Hero" />
+  </div>
+
+  <h2>Our Card Selection</h2>
+  <div class="carousel">
+    <div class="carousel-item">
+      <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Cards/standard-credit-card.jpg" alt="Standard Card">
+      <h3>Standard Card</h3>
+      <p>Ideal for everyday payments, with wide acceptance and basic benefits.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Cards/premium-credit-card.jpg" alt="Premium Card">
+      <h3>Premium Card</h3>
+      <p>Get exclusive perks, higher spending limits, and travel insurance.</p>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Cards/debit-card.jpg" alt="Debit Card">
+      <h3>Debit Card</h3>
+      <p>Pay directly from your account, online and in stores, in Italy or abroad.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="copyright">
+      &copy; 2025 Test Personalization Page
+    </div>
+  </footer>
+
+</body>
+</html>
