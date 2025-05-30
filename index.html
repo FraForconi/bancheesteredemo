@@ -174,15 +174,32 @@
     <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Conti/Conto%20di%20base/schedina-v2-conto-di-base.jpg" alt="Right Image">
   </section>
 
-  <footer>
+<footer>
+  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
     <div class="footer-links">
       <a href="#">About Us</a>
       <a href="#">Contact</a>
     </div>
-    <div class="copyright">
-      &copy; 2025 Test Personalization Page
+    <div class="email-subscribe" style="text-align: right;">
+      <input type="email" id="emailInput" placeholder="Enter your email" style="padding: 5px; border-radius: 4px; border: none;" />
+      <button id="submitEmailBtn" style="padding: 5px 10px; border: none; background-color: #00539F; color: white; border-radius: 4px;">Submit</button>
+      <div id="confirmationMessage" style="margin-top: 5px; color: #ccffcc; font-size: 14px; display: none;">You have successfully submitted your email.</div>
     </div>
-  </footer>
+  </div>
+  <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
+    &copy; 2025 Test Personalization Page
+  </div>
+
+  <script>
+    document.getElementById('submitEmailBtn').addEventListener('click', function () {
+      const email = document.getElementById('emailInput').value;
+      if (email.trim() !== "") {
+        document.getElementById('confirmationMessage').style.display = 'block';
+      }
+    });
+  </script>
+</footer>
+
 
 </body>
 </html>
