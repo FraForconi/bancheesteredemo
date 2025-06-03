@@ -1,179 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mortgage Simulator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Simulator</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-    nav {
-      background-color: #00539F;
-      padding: 10px;
-      text-align: center;
-    }
+        nav {
+            background-color: #00539F;
+            padding: 10px;
+            text-align: center;
+        }
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-    input, select {
-      width: 100%;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-    }
+        input,
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+        }
 
-    button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-    }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+        }
 
-    button:hover {
-      background: #0056b3;
-    }
+        button:hover {
+            background: #0056b3;
+        }
 
-    .result {
-      margin-top: 1rem;
-      font-weight: bold;
-    }
+        .result {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
 
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
+        .appointment-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f2ff;
+            border-left: 4px solid #00539F;
+            border-radius: 5px;
+        }
 
-    .footer-links {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
+        .contact-button {
+            background-color: #00539F;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-    .footer-links a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-    }
+        .contact-button:hover {
+            background-color: #003f7f;
+        }
 
-    .copyright {
-      font-size: 12px;
-      color: #cccccc;
-      margin-top: 10px;
-    }
-  </style>
+
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .footer-links {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: #cccccc;
+            margin-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Discover Our Cards</h1>
-  </header>
+    <header>
+        <h1>Discover Our Cards</h1>
+    </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="cards.html">Cards</a>
-    <a href="accounts.html">Accounts</a>
-    <a href="mortgage.html" class="active">Mortgages</a>
-  </nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cards.html">Cards</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="mortgage.html" class="active">Mortgages</a>
+    </nav>
 
-  <div class="container">
-    <h2>Mortgage Simulation</h2>
+    <div class="container">
+        <h2>Mortgage Simulation</h2>
 
-    <label>Purpose of Mortgage</label>
-    <select>
-      <option value="first">First Home</option>
-      <option value="second">Second Home</option>
-      <option value="switch">Switch</option>
-    </select>
+        <label>Purpose of Mortgage</label>
+        <select>
+            <option value="first">First Home</option>
+            <option value="second">Second Home</option>
+            <option value="switch">Switch</option>
+        </select>
 
-    <label>Property Value (€)</label>
-    <input type="number" id="propertyValue" placeholder="e.g. 200000" />
+        <label>Property Value (€)</label>
+        <input type="number" id="propertyValue" placeholder="e.g. 200000" />
 
-    <label>Loan Amount (€)</label>
-    <input type="number" id="amount" placeholder="e.g. 150000" />
+        <label>Loan Amount (€)</label>
+        <input type="number" id="amount" placeholder="e.g. 150000" />
 
-    <label>Duration (years)</label>
-    <input type="number" id="duration" placeholder="e.g. 25" />
+        <label>Duration (years)</label>
+        <input type="number" id="duration" placeholder="e.g. 25" />
 
-    <label>Annual Interest Rate (%)</label>
-    <input type="number" id="rate" step="0.01" placeholder="e.g. 3.5" />
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="rate" step="0.01" placeholder="e.g. 3.5" />
 
-    <label>Date of Birth</label>
-    <input type="date" id="birthdate" />
+        <label>Date of Birth</label>
+        <input type="date" id="birthdate" />
 
-    <button id="calculateButton" onclick="calculatePayment()">Calculate Monthly Payment</button>
+        <button id="calculateButton" onclick="calculatePayment()">Calculate Monthly Payment</button>
 
-    <div class="result" id="result"></div>
-  </div>
+        <div class="result" id="result"></div>
 
-<footer>
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <div class="footer-links">
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
+        <div class="appointment-box" id="appointmentBox" style="display: none;">
+            <p>Clicca qui per prendere appuntamento</p>
+            <button onclick="window.location.href='contact.html'" class="contact-button">Contattaci</button>
+        </div>
     </div>
-    <div class="email-subscribe" style="text-align: right;">
-      <input type="email" id="emailInput" placeholder="Enter your email" style="padding: 5px; border-radius: 4px; border: none;" />
-      <button id="submitEmailBtn" style="padding: 5px 10px; border: none; background-color: #00539F; color: white; border-radius: 4px;">Submit</button>
-      <div id="confirmationMessage" style="margin-top: 5px; color: #ccffcc; font-size: 14px; display: none;">You have successfully submitted your email.</div>
-    </div>
-  </div>
-  <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
-    &copy; 2025 Test Personalization Page
-  </div>
 
-  <script>
-    document.getElementById('submitEmailBtn').addEventListener('click', function () {
-      const email = document.getElementById('emailInput').value;
-      if (email.trim() !== "") {
-        document.getElementById('confirmationMessage').style.display = 'block';
-      }
-    });
-  </script>
-</footer>
+    <footer>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="email-subscribe" style="text-align: right;">
+                <input type="email" id="emailInput" placeholder="Enter your email"
+                    style="padding: 5px; border-radius: 4px; border: none;" />
+                <button id="submitEmailBtn"
+                    style="padding: 5px 10px; border: none; background-color: #00539F; color: white; border-radius: 4px;">Submit</button>
+                <div id="confirmationMessage" style="margin-top: 5px; color: #ccffcc; font-size: 14px; display: none;">
+                    You have successfully submitted your email.</div>
+            </div>
+        </div>
+        <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
+            &copy; 2025 Test Personalization Page
+        </div>
+
+        <script>
+            document.getElementById('submitEmailBtn').addEventListener('click', function () {
+                const email = document.getElementById('emailInput').value;
+                if (email.trim() !== "") {
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                }
+            });
+        </script>
+    </footer>
 
 
-  <script>
-    function calculatePayment() {
-      const P = parseFloat(document.getElementById('amount').value);
-      const n = parseInt(document.getElementById('duration').value) * 12;
-      const r = parseFloat(document.getElementById('rate').value) / 100 / 12;
+    <script>
+        function calculatePayment() {
+            const P = parseFloat(document.getElementById('amount').value);
+            const n = parseInt(document.getElementById('duration').value) * 12;
+            const r = parseFloat(document.getElementById('rate').value) / 100 / 12;
 
-      if (!P || !n || !r) {
-        document.getElementById('result').textContent = "Please fill in all fields correctly.";
-        return;
-      }
+            if (!P || !n || !r) {
+                document.getElementById('result').textContent = "Please fill in all fields correctly.";
+                document.getElementById('appointmentBox').style.display = 'none';
+                return;
+            }
 
-      const payment = (P * r) / (1 - Math.pow(1 + r, -n));
-      document.getElementById('result').textContent = `Your estimated monthly payment is € ${payment.toFixed(2)}`;
-    }
-  </script>
+            const payment = (P * r) / (1 - Math.pow(1 + r, -n));
+            document.getElementById('result').textContent = `Your estimated monthly payment is € ${payment.toFixed(2)}`;
+
+            // Show appointment box
+            document.getElementById('appointmentBox').style.display = 'block';
+        }
+
+    </script>
 </body>
+
 </html>
