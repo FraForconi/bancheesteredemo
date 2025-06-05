@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Test Personalization Page</title>
+  <title>Home Page</title>
 
     <!-- 🌐 Beacon di Salesforce MC Personalization -->
   <script type="text/javascript">
@@ -17,125 +17,122 @@
     })();
   </script>
 
-  <style>
-    body {
+<style>
+  body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-    }
+  }
 
-    header {
-      background-color: #003366;
+  header {
+      background-color: #ea600e;
       color: white;
       padding: 20px;
       text-align: center;
-    }
+  }
 
-    nav {
-      background-color: #00539F;
+  nav {
+      background-color: #4d4d4d;
       padding: 10px;
       text-align: center;
-    }
+  }
 
-    nav a {
+  nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
-    }
+  }
 
-    nav a.active {
-      border-bottom: 2px solid white;
-      padding-bottom: 4px;
-    }
-
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-
-    .content-zone-1 img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .content-zone-1 [data-pzn-zone="main-hero"] {
-      display: block;
-    }
-
-    .content-zone-2, .content-zone-3 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-
-    .content-zone-2 img,
-    .content-zone-3 img {
-      width: 400px;
-      height: auto;
-    }
-
-    .content-zone-2 .text {
-      max-width: 400px;
-      text-align: left;
-    }
-
-    .content-zone-3 .text {
-      max-width: 400px;
-      text-align: right;
-    }
-
-    .carousel {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 20px;
-      margin-top: 40px;
-      scroll-snap-type: x mandatory;
-    }
-
-    .carousel-item {
-      flex: 0 0 auto;
-      width: 250px;
-      background-color: #f2f2f2;
-      padding: 20px;
-      scroll-snap-align: center;
+  .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
       border-radius: 8px;
-    }
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 
-    footer {
-      background-color: #003366;
+  input,
+  select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+  }
+
+  button {
+      background: #ea600e;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background: #c24e0c;
+  }
+
+  .result {
+      margin-top: 1rem;
+      font-weight: bold;
+  }
+
+  .appointment-box {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: white;
+      border-left: 4px solid #ea600e;
+      border-radius: 5px #ea600e;
+  }
+
+  .contact-button {
+      background-color: #ea600e;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+
+  .contact-button:hover {
+      background-color: #c24e0c;
+  }
+
+
+  footer {
+      background-color: #323232;
       color: white;
       text-align: center;
       padding: 20px;
       margin-top: 40px;
-    }
+  }
 
-    .footer-links {
+  .footer-links {
       font-size: 18px;
       margin-bottom: 10px;
-    }
+  }
 
-    .footer-links a {
+  .footer-links a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
-    }
+  }
 
-    .copyright {
+  .copyright {
       font-size: 12px;
-      color: #cccccc;
+      color: white;
       margin-top: 10px;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Welcome to our test page</h1>
+  <header style="background-color: #ea600e; color: white; padding: 20px; position: relative;">
+    <div style="display: flex; align-items: center; justify-content: center; position: relative;">
+      <img src="https://image.s7.sfmc-content.com/lib/fe2c11717d640474761677/m/1/9ff8181c-f824-4cdd-ad9a-15a85dcbf23d.png" alt="Logo" style="height: 40px; position: absolute; left: 20px;" />
+      <h1 style="margin: 0;">Welcome to our test pages</h1>
+    </div>
   </header>
 
   <nav>
@@ -174,30 +171,33 @@
     <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Conti/Conto%20di%20base/schedina-v2-conto-di-base.jpg" alt="Right Image">
   </section>
 
-<footer>
-  <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-    <div class="footer-links">
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
+  <footer>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="email-subscribe" style="text-align: right;">
+            <input type="email" id="emailInput" placeholder="Enter your email"
+                style="padding: 5px; border-radius: 4px; border: none;" />
+            <button id="submitEmailBtn"
+                style="padding: 5px 10px; border: none; background-color: #ea600e; color: white; border-radius: 4px;">Submit</button>
+            <div id="confirmationMessage" style="margin-top: 5px; color: #ffffff; font-size: 14px; display: none;">
+                You have successfully submitted your email.</div>
+        </div>
     </div>
-    <div class="email-subscribe" style="text-align: right;">
-      <input type="email" id="emailInput" placeholder="Enter your email" style="padding: 5px; border-radius: 4px; border: none;" />
-      <button id="submitEmailBtn" style="padding: 5px 10px; border: none; background-color: #00539F; color: white; border-radius: 4px;">Submit</button>
-      <div id="confirmationMessage" style="margin-top: 5px; color: #ccffcc; font-size: 14px; display: none;">You have successfully submitted your email.</div>
+    <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
+        &copy; 2025 Test Personalization Page
     </div>
-  </div>
-  <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
-    &copy; 2025 Test Personalization Page
-  </div>
 
-  <script>
-    document.getElementById('submitEmailBtn').addEventListener('click', function () {
-      const email = document.getElementById('emailInput').value;
-      if (email.trim() !== "") {
-        document.getElementById('confirmationMessage').style.display = 'block';
-      }
-    });
-  </script>
+    <script>
+        document.getElementById('submitEmailBtn').addEventListener('click', function () {
+            const email = document.getElementById('emailInput').value;
+            if (email.trim() !== "") {
+                document.getElementById('confirmationMessage').style.display = 'block';
+            }
+        });
+    </script>
 </footer>
 
 
