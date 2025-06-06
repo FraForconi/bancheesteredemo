@@ -203,14 +203,38 @@
             &copy; 2025 Test Personalization Page
         </div>
     
-        <script>
-            document.getElementById('submitEmailBtn').addEventListener('click', function () {
-                const email = document.getElementById('emailInput').value;
-                if (email.trim() !== "") {
-                    document.getElementById('confirmationMessage').style.display = 'block';
-                }
-            });
-        </script>
+<script>
+    // Recupera l'email da localStorage (se esiste) e la salva nel dataLayer
+    const savedEmail = localStorage.getItem('userEmail');
+
+    window.dataLayer = window.dataLayer || {};
+    window.dataLayer.user = {
+        email: savedEmail || null
+    };
+
+    // Mostra già il messaggio se l'email è stata salvata
+    if (savedEmail) {
+        document.getElementById('confirmationMessage').style.display = 'block';
+    }
+
+    document.getElementById('submitEmailBtn').addEventListener('click', function () {
+        const email = document.getElementById('emailInput').value.trim();
+        if (email !== "") {
+            // Salva in localStorage
+            localStorage.setItem('userEmail', email);
+
+            // Aggiorna il dataLayer
+            window.dataLayer.user.email = email;
+
+            // Mostra messaggio di conferma
+            document.getElementById('confirmationMessage').style.display = 'block';
+
+            // (Facoltativo) Debug
+            console.log("Email salvata:", email);
+        }
+    });
+</script>
+
     </footer>
 
 
