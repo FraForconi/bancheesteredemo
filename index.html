@@ -1,205 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
 
     <!-- 🌐 Beacon di Salesforce MC Personalization -->
-  <script type="text/javascript">
-    (function() {
-      var s = document.createElement('script');
-      s.type = 'text/javascript';
-      s.async = true;
-      s.src = '//cdn.evgnet.com/beacon/partneraccentureitaly/bancheesteredemo/scripts/evergage.min.js';
-      var x = document.getElementsByTagName('script')[0];
-      x.parentNode.insertBefore(s, x);
-    })();
-  </script>
+    <script type="text/javascript">
+        (function () {
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = '//cdn.evgnet.com/beacon/partneraccentureitaly/bancheesteredemo/scripts/evergage.min.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
 
-<style>
-  body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-  }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-  header {
-      background-color: #ea600e;
-      color: white;
-      padding: 20px;
-      text-align: center;
-  }
+        header {
+            background-color: #ea600e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-  nav {
-      background-color: #4d4d4d;
-      padding: 10px;
-      text-align: center;
-  }
+        nav {
+            background-color: #4d4d4d;
+            padding: 10px;
+            text-align: center;
+        }
 
-  nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-  }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-  .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+        nav a.active {
+            border-bottom: 2px solid white;
+            padding-bottom: 4px;
+        }
 
-  input,
-  select {
-      width: 100%;
-      padding: 0.5rem;
-      margin: 0.5rem 0;
-  }
+        section {
+            padding: 40px;
+            text-align: center;
+        }
 
-  button {
-      background: #ea600e;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-  }
+        .content-zone-1 img {
+            max-width: 100%;
+            height: auto;
+        }
 
-  button:hover {
-      background: #c24e0c;
-  }
+        .content-zone-1 [data-pzn-zone="main-hero"] {
+            display: block;
+        }
 
-  .result {
-      margin-top: 1rem;
-      font-weight: bold;
-  }
+        .content-zone-2,
+        .content-zone-3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
 
-  .appointment-box {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: white;
-      border-left: 4px solid #ea600e;
-      border-radius: 5px #ea600e;
-  }
+        .content-zone-2 img,
+        .content-zone-3 img {
+            width: 400px;
+            height: auto;
+        }
 
-  .contact-button {
-      background-color: #ea600e;
-      color: white;
-      padding: 10px 20px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-  }
+        .content-zone-2 .text {
+            max-width: 400px;
+            text-align: left;
+        }
 
-  .contact-button:hover {
-      background-color: #c24e0c;
-  }
+        .content-zone-3 .text {
+            max-width: 400px;
+            text-align: right;
+        }
 
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 40px;
+            scroll-snap-type: x mandatory;
+        }
 
-  footer {
-      background-color: #323232;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-  }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: 250px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            scroll-snap-align: center;
+            border-radius: 8px;
+        }
 
-  .footer-links {
-      font-size: 18px;
-      margin-bottom: 10px;
-  }
+        footer {
+            background-color: #323232;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
 
-  .footer-links a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-  }
+        .footer-links {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
 
-  .copyright {
-      font-size: 12px;
-      color: white;
-      margin-top: 10px;
-  }
-</style>
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .copyright {
+            font-size: 12px;
+            color: white;
+            margin-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
 
-  <header style="background-color: #ea600e; color: white; padding: 20px; position: relative;">
-    <div style="display: flex; align-items: center; justify-content: center; position: relative;">
-      <img src="https://image.s7.sfmc-content.com/lib/fe2c11717d640474761677/m/1/9ff8181c-f824-4cdd-ad9a-15a85dcbf23d.png" alt="Logo" style="height: 40px; position: absolute; left: 20px;" />
-      <h1 style="margin: 0;">Welcome to our test pages</h1>
-    </div>
-  </header>
-
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="cards.html">Cards</a>
-    <a href="accounts.html">Accounts</a>
-    <a href="mortgage.html">Mortgages</a>
-  </nav>
-
-  <!-- Hero image with selector -->
-  <section class="content-zone-1" id="heroImageZone">
-    <div data-pzn-zone="main-hero">
-      <img src="https://cd9941cc.delivery.rocketcdn.me/wp-content/uploads/2024/08/ICICI-Bank-Add-on-Credit-Cards.webp" alt="Hero Image" />
-    </div>
-  </section>
-
-  <!-- Content section 2 -->
-  <section class="content-zone-2" id="Block2Zone">
-    <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/CB/UB/LD/30911963/card.jpg" alt="Left Image">
-    <div class="text">
-      <h2>Classic Card</h2>
-      <p>
-        For everyday purchases, including online. You can use it in all stores displaying the logo of the card's network, even abroad.
-      </p>
-    </div>
-  </section>
-
-  <!-- Content section 3 -->
-  <section class="content-zone-3" id="Block3Zone">
-    <div class="text">
-      <h2>Basic Bank Account</h2>
-      <p>
-        The account that meets the basic needs of those who don’t have other accounts. The costs of direct debits for utility bill payments are included in the fee.
-      </p>
-    </div>
-    <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Conti/Conto%20di%20base/schedina-v2-conto-di-base.jpg" alt="Right Image">
-  </section>
-
-  <footer>
-    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-        <div class="footer-links">
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
+    <header style="background-color: #ea600e; color: white; padding: 20px; position: relative;">
+        <div style="display: flex; align-items: center; justify-content: center; position: relative;">
+          <img src="https://image.s7.sfmc-content.com/lib/fe2c11717d640474761677/m/1/9ff8181c-f824-4cdd-ad9a-15a85dcbf23d.png" alt="Logo" style="height: 40px; position: absolute; left: 20px;" />
+          <h1 style="margin: 0;">Welcome to our test pages</h1>
         </div>
-        <div class="email-subscribe" style="text-align: right;">
-            <input type="email" id="emailInput" placeholder="Enter your email"
-                style="padding: 5px; border-radius: 4px; border: none;" />
-            <button id="submitEmailBtn"
-                style="padding: 5px 10px; border: none; background-color: #ea600e; color: white; border-radius: 4px;">Submit</button>
-            <div id="confirmationMessage" style="margin-top: 5px; color: #ffffff; font-size: 14px; display: none;">
-                You have successfully submitted your email.</div>
-        </div>
-    </div>
-    <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
-        &copy; 2025 Test Personalization Page
-    </div>
+      </header>
 
-    <script>
-        document.getElementById('submitEmailBtn').addEventListener('click', function () {
-            const email = document.getElementById('emailInput').value;
-            if (email.trim() !== "") {
-                document.getElementById('confirmationMessage').style.display = 'block';
-            }
-        });
-    </script>
-</footer>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="cards.html">Cards</a>
+        <a href="accounts.html">Accounts</a>
+        <a href="mortgage.html">Mortgages</a>
+    </nav>
+
+    <!-- Hero image with selector -->
+    <section class="content-zone-1" id="heroImageZone">
+        <div data-pzn-zone="main-hero">
+            <img src="https://cd9941cc.delivery.rocketcdn.me/wp-content/uploads/2024/08/ICICI-Bank-Add-on-Credit-Cards.webp"
+                alt="Hero Image" />
+        </div>
+    </section>
+
+    <!-- Content section 2 -->
+    <section class="content-zone-2" id="Block2Zone">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2020/11/CB/UB/LD/30911963/card.jpg" alt="Left Image">
+        <div class="text">
+            <h2>Classic Card</h2>
+            <p>
+                For everyday purchases, including online. You can use it in all stores displaying the logo of the card's
+                network, even abroad.
+            </p>
+        </div>
+    </section>
+
+    <!-- Content section 3 -->
+    <section class="content-zone-3" id="Block3Zone">
+        <div class="text">
+            <h2>Basic Bank Account</h2>
+            <p>
+                The account that meets the basic needs of those who don’t have other accounts. The costs of direct
+                debits for utility bill payments are included in the fee.
+            </p>
+        </div>
+        <img src="https://www.intesasanpaolo.com/content/dam/vetrina/design/img/Conti/Conto%20di%20base/schedina-v2-conto-di-base.jpg"
+            alt="Right Image">
+    </section>
+
+    <footer>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="email-subscribe" style="text-align: right;">
+                <input type="email" id="emailInput" placeholder="Enter your email"
+                    style="padding: 5px; border-radius: 4px; border: none;" />
+                <button id="submitEmailBtn"
+                    style="padding: 5px 10px; border: none; background-color: #ea600e; color: white; border-radius: 4px;">Submit</button>
+                <div id="confirmationMessage" style="margin-top: 5px; color: #ffffff; font-size: 14px; display: none;">
+                    You have successfully submitted your email.</div>
+            </div>
+        </div>
+        <div class="copyright" style="font-size: 10px; color: #aaaaaa; margin-top: 20px;">
+            &copy; 2025 Test Personalization Page
+        </div>
+    
+        <script>
+            document.getElementById('submitEmailBtn').addEventListener('click', function () {
+                const email = document.getElementById('emailInput').value;
+                if (email.trim() !== "") {
+                    document.getElementById('confirmationMessage').style.display = 'block';
+                }
+            });
+        </script>
+    </footer>
 
 
 </body>
+
 </html>
